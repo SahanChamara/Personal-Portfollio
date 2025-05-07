@@ -65,14 +65,14 @@ const Hero = () => {
               </Button>
               
               <Button variant="outline" size="lg" asChild className="border-primary/20 hover:border-primary/50 transition-colors backdrop-blur-sm bg-background/40">
-                <a href="#" className="flex items-center gap-2">
+                <a href="https://github.com/SahanChamara" className="flex items-center gap-2">
                   <Github className="h-4 w-4" />
                   GitHub
                 </a>
               </Button>
               
               <Button variant="outline" size="lg" asChild className="border-primary/20 hover:border-primary/50 transition-colors backdrop-blur-sm bg-background/40">
-                <a href="#" className="flex items-center gap-2">
+                <a href="https://www.linkedin.com/in/sahan-chamara/" className="flex items-center gap-2">
                   <Linkedin className="h-4 w-4" />
                   LinkedIn
                 </a>
@@ -88,8 +88,8 @@ const Hero = () => {
               <div className="absolute inset-2 rounded-full bg-background/80 backdrop-blur-sm"></div>
               <div className="absolute inset-4 rounded-full overflow-hidden bg-gradient-to-b from-primary/5 to-accent/5 backdrop-blur">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" 
-                  alt="John Doe"
+                  src="src/assets/sahanchamara.jpg" 
+                  alt="Sahan Chamara"
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>
