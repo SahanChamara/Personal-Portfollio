@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-2 mb-4">
               <div className="h-px w-12 bg-border"></div>
-              <span className="font-mono text-sm">John Doe</span>
+              <span className="font-mono text-sm">Sahan Chamara</span>
               <div className="h-px w-12 bg-border"></div>
             </div>
             <h3 className="text-xl font-semibold mb-2">Let's Build Something Amazing Together</h3>
@@ -38,21 +38,21 @@ const Footer = () => {
           
           <div className="flex items-center space-x-6 mb-8">
             <a
-              href="#"
+              href="https://github.com/SahanChamara"
               className="text-foreground/70 hover:text-primary transition-colors h-10 w-10 flex items-center justify-center rounded-full bg-background border border-border hover:border-primary/50"
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/sahan-chamara/"
               className="text-foreground/70 hover:text-primary transition-colors h-10 w-10 flex items-center justify-center rounded-full bg-background border border-border hover:border-primary/50"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="mailto:john.doe@example.com"
+              href="mailto:sahanchamara456@gmail.com"
               className="text-foreground/70 hover:text-primary transition-colors h-10 w-10 flex items-center justify-center rounded-full bg-background border border-border hover:border-primary/50"
               aria-label="Email"
             >
@@ -62,7 +62,7 @@ const Footer = () => {
           
           <div className="text-center border-t border-border w-full pt-8">
             <p className="text-sm text-muted-foreground">
-              &copy; {currentYear} John Doe. All rights reserved.
+              &copy; {currentYear} Sahan Chamara. All rights reserved.
             </p>
             <p className="text-xs text-muted-foreground mt-1">
               Designed and built with React, TypeScript, and Tailwind CSS

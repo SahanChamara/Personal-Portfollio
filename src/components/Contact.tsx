@@ -62,8 +62,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <a href="mailto:john.doe@example.com" className="font-medium hover:text-primary transition-colors">
-                    john.doe@example.com
+                  <a href="mailto:sahanchamara456@gmail.com" className="font-medium hover:text-primary transition-colors">
+                    sahanchamara456@gmail.com
                   </a>
                 </div>
               </div>
@@ -75,7 +75,7 @@ const Contact = () => {
                 <div>
                   <p className="text-sm text-muted-foreground">Phone</p>
                   <a href="tel:+1234567890" className="font-medium hover:text-accent transition-colors">
-                    (123) 456-7890
+                    (94) 778 557 750
                   </a>
                 </div>
               </div>
@@ -86,8 +86,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">GitHub</p>
-                  <a href="#" className="font-medium hover:text-primary transition-colors">
-                    github.com/johndoe
+                  <a href="https://github.com/SahanChamara" className="font-medium hover:text-primary transition-colors">
+                    github.com/SahanChamaea
                   </a>
                 </div>
               </div>
@@ -98,8 +98,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">LinkedIn</p>
-                  <a href="#" className="font-medium hover:text-accent transition-colors">
-                    linkedin.com/in/johndoe
+                  <a href="https://www.linkedin.com/in/sahan-chamara/" className="font-medium hover:text-accent transition-colors">
+                    linkedin.com/in/sahan-chamara
                   </a>
                 </div>
               </div>
@@ -109,7 +109,7 @@ const Contact = () => {
             <div className="mt-8 bg-muted/50 dark:bg-muted/30 aspect-[4/3] rounded-lg flex items-center justify-center">
               <div className="text-center p-4">
                 <p className="font-medium mb-1">Based in</p>
-                <p className="text-lg font-semibold">San Francisco, CA</p>
+                <p className="text-lg font-semibold">Galle, LK</p>
                 <p className="text-sm text-muted-foreground mt-1">Available for remote work worldwide</p>
               </div>
             </div>
