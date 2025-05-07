@@ -11,38 +11,38 @@ const Projects = () => {
   
   const projects = [
     {
-      title: 'E-Commerce Platform',
+      title: 'Project Management Tool',
       description: 'A full-stack e-commerce application with user authentication, product catalog, shopping cart, and payment processing.',
       image: '/placeholder.svg',
-      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe'],
-      github: '#',
+      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Python'],
+      github: 'https://github.com/SahanChamara/Project-Management-Tool-backend-',
       live: '#',
       category: 'fullstack'
     },
     {
-      title: 'Task Management App',
+      title: 'MOS Burger Restuarent POS System',
       description: 'A productivity application for organizing tasks with drag-and-drop functionality, team collaboration, and real-time updates.',
       image: '/placeholder.svg',
-      technologies: ['TypeScript', 'React', 'Firebase', 'Tailwind CSS'],
-      github: '#',
+      technologies: ['React', 'Java', 'SpringBoot','mySQL', 'Supabase', 'CICD', 'AWS', 'Docker'],
+      github: 'https://github.com/SahanChamara/MOS-Burger-FrontEnd',
+      live: '#',
+      category: 'fullstack'
+    },
+    {
+      title: 'Virtual Plant Care Guide',
+      description: 'An intelligent web application that detects plant diseases and provides treatment suggestions using machine learning and AI.',
+      image: 'src/assets/ss1.png',
+      technologies: ['JavaScript', 'TensarFlow.js','ML5.js', 'Google AI Studio', 'Gemini AI'],
+      github:'https://github.com/SahanChamara/Virtual-Plant-Care-Guide',
       live: '#',
       category: 'frontend'
     },
     {
-      title: 'Weather Dashboard',
-      description: 'A weather application that displays current conditions and forecasts for multiple locations with interactive maps and charts.',
+      title: 'Library Management System',
+      description: 'The Library Management System (LMS) is a user-friendly desktop application built with JavaFX, designed to streamline the management of library operations.',
       image: '/placeholder.svg',
-      technologies: ['JavaScript', 'React', 'Chart.js', 'Weather API'],
-      github: '#',
-      live: '#',
-      category: 'frontend'
-    },
-    {
-      title: 'Social Media API',
-      description: 'RESTful API for a social media platform with authentication, post creation, comments, and user profiles.',
-      image: '/placeholder.svg',
-      technologies: ['Node.js', 'Express', 'MongoDB', 'JWT', 'Socket.io'],
-      github: '#',
+      technologies: ['Java', 'JavaFX', 'mySQL'],
+      github: 'https://github.com/SahanChamara/Library-Management-System',
       live: '#',
       category: 'backend'
     },
@@ -99,6 +99,11 @@ const Projects = () => {
         {filteredProjects.map((project, index) => (
           <Card key={index} className="group overflow-hidden border-primary/10 dark:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
             <div className="aspect-video bg-muted relative overflow-hidden">
+            <img 
+                src={project.image} 
+                alt={project.title} 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
                 <div className="flex gap-2">
                   <Button variant="outline" size="sm" asChild className="bg-background/80 backdrop-blur-sm">
@@ -115,11 +120,7 @@ const Projects = () => {
                   </Button>
                 </div>
               </div>
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+              
               <Badge className="absolute top-3 right-3 bg-background/80 backdrop-blur-sm text-foreground">
                 {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
               </Badge>
@@ -143,7 +144,7 @@ const Projects = () => {
       
       <div className="flex justify-center mt-12">
         <Button variant="outline" asChild className="border-primary/20 dark:border-primary/30 hover:border-primary/50 transition-colors">
-          <a href="#" className="flex items-center gap-2">
+          <a href="https://github.com/SahanChamara" className="flex items-center gap-2">
             <Github className="h-4 w-4" />
             See More on GitHub
           </a>
