@@ -33,19 +33,21 @@ const SkillBar = ({ name, level, color }: { name: string; level: number; color: 
 
 const Skills = () => {
   const frontendSkills = [
-    { name: 'React', level: 90 },
-    { name: 'TypeScript', level: 85 },
+    { name: 'React', level: 75 },
+    { name: 'TypeScript', level: 50 },
     { name: 'JavaScript', level: 95 },
     { name: 'HTML & CSS', level: 90 },
-    { name: 'Tailwind CSS', level: 85 },
+    { name: 'Tailwind CSS', level: 80 },
   ];
   
   const backendSkills = [
+    { name: 'Java', level: 90 },
     { name: 'Node.js', level: 80 },
     { name: 'Express', level: 75 },
-    { name: 'Python', level: 70 },
+    { name: 'Python', level: 20 },
     { name: 'RESTful APIs', level: 85 },
-    { name: 'PostgreSQL', level: 75 },
+    { name: 'PostgreSQL', level: 50 },
+    { name: 'mySQL', level: 90 },
   ];
   
   const otherSkills = [
