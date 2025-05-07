@@ -19,17 +19,13 @@ const About = () => {
       <div className="grid md:grid-cols-2 gap-10 items-center">
         <div className="space-y-6">
           <p className="text-lg leading-relaxed">
-            Hello! I'm John, a software engineer with a passion for creating
-            beautiful, functional, and user-centered digital experiences.
+          Hello!. I'm Sahan Chamara. a results-driven Full Stack Developer passionate about building innovative digital solutions that solve real-world challenges. With expertise spanning Java, Spring Boot, React, Angular, JavaScript, Python, and both SQL and NoSQL databases, I create responsive, scalable applications focused on exceptional user experiences.
           </p>
           <p className="leading-relaxed">
-            I enjoy building everything from small business sites to rich
-            interactive web applications. My approach to development focuses on writing clean,
-            efficient code and staying up to date with the latest technologies.
+          My development approach combines clean code principles with agile methodologies to deliver high-performance software throughout the entire development lifecycle. Currently expanding my skills as a Trainee Developer, I'm committed to implementing industry best practices in software architecture, web accessibility, and responsive design
           </p>
           <p className="leading-relaxed">
-            When I'm not coding, you can find me hiking, reading, or exploring new coffee shops.
-            I believe in continuous learning and enjoy tackling new challenges.
+          I leverage modern frameworks and development tools to build optimized, SEO-friendly applications while continuously exploring emerging technologies to enhance my technical repertoire. Let's connect to discuss how my full-stack expertise can transform your next digital project into a seamless, efficient, and market-ready solution.
           </p>
           
           {/* Key traits */}
@@ -46,24 +42,24 @@ const About = () => {
           <CardContent className="p-0">
             <div className="bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/20 dark:to-accent/20 p-6">
               <p className="font-mono text-sm mb-2 text-primary">EDUCATION</p>
-              <h3 className="text-xl font-semibold mb-1">Bachelor of Science in Computer Science</h3>
-              <p className="text-muted-foreground mb-4">University of Technology, 2018-2022</p>
+              <h3 className="text-xl font-semibold mb-1">Diploma in Software Engineering</h3>
+              <p className="text-muted-foreground mb-4">Institue Of Computer Engineering Technolofy (iCET), 2024-2025</p>
             </div>
             
             <div className="p-6">
               <p className="font-mono text-sm mb-2 text-primary">EXPERIENCE</p>
-              <div className="relative border-l-2 border-primary/20 pl-6 pb-6">
+{/*               <div className="relative border-l-2 border-primary/20 pl-6 pb-6">
                 <div className="absolute top-0 left-[-9px] w-4 h-4 rounded-full bg-primary"></div>
                 <h3 className="text-xl font-semibold mb-1">Senior Frontend Developer</h3>
                 <p className="text-muted-foreground mb-2">TechCorp Inc., 2022-Present</p>
                 <p className="text-sm">Led development of multiple web applications using React and TypeScript</p>
-              </div>
+              </div> */}
               
               <div className="relative border-l-2 border-primary/20 pl-6">
                 <div className="absolute top-0 left-[-9px] w-4 h-4 rounded-full bg-accent"></div>
-                <h3 className="text-xl font-semibold mb-1">Software Engineer</h3>
-                <p className="text-muted-foreground mb-2">Innovative Solutions, 2020-2022</p>
-                <p className="text-sm">Developed and maintained full-stack applications for various clients</p>
+                <h3 className="text-xl font-semibold mb-1">Software Developer</h3>
+                <p className="text-muted-foreground mb-2">Innovative Solutions, 2024-2025</p>
+                <p className="text-sm">Developed and maintained full-stack applications</p>
               </div>
             </div>
           </CardContent>
