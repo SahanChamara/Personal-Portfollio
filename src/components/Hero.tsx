@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Github, Linkedin } from 'lucide-react';
 import TechBackground from './TechBackground';
+import sahan from '../assets/sahanchamara.jpg';
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -79,7 +80,7 @@ const Hero = () => {
               </Button>
             </div>
           </div>
-          
+                
           <div className="lg:col-span-2 flex justify-center lg:justify-end">
             <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
               {/* Hero image with decorative elements */}
@@ -88,7 +89,7 @@ const Hero = () => {
               <div className="absolute inset-2 rounded-full bg-background/80 backdrop-blur-sm"></div>
               <div className="absolute inset-4 rounded-full overflow-hidden bg-gradient-to-b from-primary/5 to-accent/5 backdrop-blur">
                 <img 
-                  src="src/assets/sahanchamara.jpg" 
+                  src={sahan} 
                   alt="Sahan Chamara"
                   className="w-full h-full object-cover rounded-full"
                 />

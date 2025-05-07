@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from '@/components/ui/badge';
 import { Github, ExternalLink } from 'lucide-react';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+import virtualPlantCare from '../assets/ss1.png';
 
 const Projects = () => {
   const [filter, setFilter] = useState<string>('all');
@@ -31,7 +32,7 @@ const Projects = () => {
     {
       title: 'Virtual Plant Care Guide',
       description: 'An intelligent web application that detects plant diseases and provides treatment suggestions using machine learning and AI.',
-      image: 'src/assets/ss1.png',
+      image: `${virtualPlantCare}`,
       technologies: ['JavaScript', 'TensarFlow.js','ML5.js', 'Google AI Studio', 'Gemini AI'],
       github:'https://github.com/SahanChamara/Virtual-Plant-Care-Guide',
       live: '#',
