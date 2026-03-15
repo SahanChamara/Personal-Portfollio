@@ -1,41 +1,39 @@
 
-import { useEffect, useState } from 'react';
-import { Moon, Sun } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Toggle } from '@/components/ui/toggle';
+import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { Toggle } from "@/components/ui/toggle";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
-    // Check for system preference or stored preference
-    const storedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light');
-    setTheme(initialTheme as 'light' | 'dark');
-    
-    // Apply theme to document
-    document.documentElement.classList.toggle('dark', initialTheme === 'dark');
+    setMounted(true);
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    
-    // Save to localStorage and update document class
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
+
+  if (!mounted) {
+    return (
+      <Toggle aria-label="Toggle theme" className="rounded-full p-2" pressed={false}>
+        <Sun className="h-5 w-5" />
+      </Toggle>
+    );
+  }
+
+  const isDark = resolvedTheme === "dark";
 
   return (
     <Toggle 
-      pressed={theme === 'dark'}
+      pressed={isDark}
       onPressedChange={toggleTheme} 
       aria-label="Toggle theme"
       className="rounded-full p-2 hover:bg-muted/50"
     >
-      {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+      {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
     </Toggle>
   );
 }
