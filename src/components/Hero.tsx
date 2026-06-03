@@ -1,126 +1,103 @@
-import { useEffect, useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Github, Linkedin } from 'lucide-react';
-import TechBackground from './TechBackground';
-import sahan from '../assets/sahanchamara.jpg';
+import { motion } from "framer-motion";
+import { ArrowDownRight, Download, Github, Linkedin, Mail, MapPin, Medal } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import type { PortfolioData } from "@/types/portfolio";
+import profileImage from "@/assets/sahanchamara.jpg";
 
-const Hero = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return (
-    <section className="min-h-screen relative flex items-center pt-16 pb-8 px-4 sm:px-6 overflow-hidden">
-      {/* Tech animation background */}
-      <TechBackground />
-      
-      {/* Animated background shapes - keeping for subtle depth */}
-      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl dark:bg-primary/5" 
-             style={{ transform: `translate(${scrollY * 0.02}px, ${-scrollY * 0.02}px)` }} />
-        <div className="absolute top-2/3 right-1/4 w-72 h-72 bg-accent/10 rounded-full blur-3xl dark:bg-accent/5"
-             style={{ transform: `translate(${-scrollY * 0.03}px, ${-scrollY * 0.01}px)` }} />
-        <div className="absolute bottom-1/4 left-1/3 w-48 h-48 bg-secondary/10 rounded-full blur-3xl dark:bg-secondary/5"
-             style={{ transform: `translate(${scrollY * 0.01}px, ${-scrollY * 0.03}px)` }} />
-      </div>
-
-      <div className="max-w-6xl mx-auto w-full relative z-10">
-        <div className="grid lg:grid-cols-5 gap-10 items-center">
-          <div className="lg:col-span-3 space-y-6 backdrop-blur-sm p-6 rounded-xl bg-background/30">
-            <div className="space-y-2">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/20 dark:bg-primary/30 backdrop-blur-sm text-primary text-sm font-medium">
-                <span className="relative flex h-2 w-2 mr-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                </span>
-                Available for hire
-              </div>
-              
-              <h1 className="text-4xl sm:text-5xl md:text-5xl font-bold tracking-tight">
-                <span className="block">Hi, I'm Sahan Chamara</span>
-                <span className="block mt-2">
-                  I build <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">exceptional</span> web applications
-                </span>
-              </h1>
-              
-              <p className="text-lg md:text-xl text-foreground/70 mt-6">
-                I'm a software engineer specializing in creating outstanding digital experiences.
-                With a focus on user-centered design and clean code, I transform ideas into reality.
-              </p>
-            </div>
-            
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Button asChild size="lg" className="group relative overflow-hidden">
-                <a href="#projects">
-                  <span className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
-                  View My Work
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
-              </Button>
-              
-              <Button variant="outline" size="lg" asChild className="border-primary/20 hover:border-primary/50 transition-colors backdrop-blur-sm bg-background/40">
-                <a href="https://github.com/SahanChamara" className="flex items-center gap-2">
-                  <Github className="h-4 w-4" />
-                  GitHub
-                </a>
-              </Button>
-              
-              <Button variant="outline" size="lg" asChild className="border-primary/20 hover:border-primary/50 transition-colors backdrop-blur-sm bg-background/40">
-                <a href="https://www.linkedin.com/in/sahan-chamara/" className="flex items-center gap-2">
-                  <Linkedin className="h-4 w-4" />
-                  LinkedIn
-                </a>
-              </Button>
-            </div>
-          </div>
-                
-          <div className="lg:col-span-2 flex justify-center lg:justify-end">
-            <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
-              {/* Hero image with decorative elements */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-md animate-pulse" 
-                   style={{ animationDuration: '8s' }}></div>
-              <div className="absolute inset-2 rounded-full bg-background/80 backdrop-blur-sm"></div>
-              <div className="absolute inset-4 rounded-full overflow-hidden bg-gradient-to-b from-primary/5 to-accent/5 backdrop-blur">
-                <img 
-                  src={sahan} 
-                  alt="Sahan Chamara"
-                  className="w-full h-full object-cover rounded-full"
-                />
-              </div>
-              
-              {/* Decorative code circle */}
-              <div className="absolute -right-6 top-10 w-20 h-20 rounded-full bg-background/70 shadow-lg border border-border/50 flex items-center justify-center backdrop-blur-md">
-                <code className="text-xs text-primary font-mono">&lt;/&gt;</code>
-              </div>
-              
-              {/* Decorative shapes */}
-              <div className="absolute -left-8 bottom-10 w-16 h-16 rounded-lg rotate-12 bg-background/70 shadow-lg border border-border/50 backdrop-blur-md"></div>
-              <div className="absolute right-10 -bottom-6 w-12 h-12 rounded-full bg-background/70 shadow-lg border border-border/50 flex items-center justify-center backdrop-blur-md">
-                <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full bg-primary"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-          <span className="text-sm text-foreground/50 mb-2 backdrop-blur-sm bg-background/30 px-3 py-1 rounded-full">Scroll to explore</span>
-          <div className="w-6 h-9 border-2 border-foreground/20 rounded-full flex justify-center pt-1 backdrop-blur-sm bg-background/30">
-            <div className="w-1 h-2 bg-foreground/50 rounded-full animate-bounce"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+type HeroProps = {
+  data: PortfolioData;
 };
 
-export default Hero;
+export default function Hero({ data }: HeroProps) {
+  return (
+    <section id="top" className="relative mx-auto grid min-h-[calc(100vh-4rem)] max-w-7xl items-center gap-10 px-4 pb-12 pt-16 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="space-y-7"
+      >
+        <Badge className="border-primary/30 bg-primary/10 px-3 py-1 text-primary hover:bg-primary/15">
+          <Medal className="mr-2 h-3.5 w-3.5" />
+          GitHub Rank {data.github.rank} | {data.github.contributions} Contributions
+        </Badge>
+
+        <div className="space-y-5">
+          <p className="mono-label">Sahan Chamara | Cloud-native engineering</p>
+          <h1 className="max-w-4xl text-4xl font-semibold leading-[1.02] sm:text-6xl lg:text-7xl">
+            {data.name}
+            <span className="block gradient-text">{data.tagline}</span>
+          </h1>
+          <p className="max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">{data.summary}</p>
+        </div>
+
+        <div className="flex flex-wrap gap-3">
+          <Button asChild size="lg" className="rounded-full px-6">
+            <a href="#projects">
+              View My Work
+              <ArrowDownRight className="h-4 w-4" />
+            </a>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="rounded-full border-white/15 px-6">
+            <a href={data.cvUrl} target="_blank" rel="noreferrer" download>
+              <Download className="h-4 w-4" />
+              Download Resume
+            </a>
+          </Button>
+          <Button asChild size="lg" variant="ghost" className="rounded-full px-6">
+            <a href="#contact">
+              <Mail className="h-4 w-4" />
+              Contact Me
+            </a>
+          </Button>
+        </div>
+
+        <div className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-3">
+          <span className="flex items-center gap-2">
+            <MapPin className="h-4 w-4 text-accent" />
+            Galle, Sri Lanka
+          </span>
+          <a className="flex items-center gap-2 hover:text-foreground" href={`https://github.com/${data.github.username}`} target="_blank" rel="noreferrer">
+            <Github className="h-4 w-4 text-accent" />
+            GitHub
+          </a>
+          <a className="flex items-center gap-2 hover:text-foreground" href="https://www.linkedin.com/in/sahanchamara" target="_blank" rel="noreferrer">
+            <Linkedin className="h-4 w-4 text-accent" />
+            LinkedIn
+          </a>
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.96 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+        className="relative"
+      >
+        <div className="cinematic-card glow-border overflow-hidden rounded-lg">
+          <div className="grid gap-0 sm:grid-cols-[0.92fr_1.08fr] lg:grid-cols-1 xl:grid-cols-[0.92fr_1.08fr]">
+            <div className="min-h-[340px] bg-secondary">
+              <img src={profileImage} alt={data.name} className="h-full min-h-[340px] w-full object-cover object-top" />
+            </div>
+            <div className="flex flex-col justify-between p-6">
+              <div>
+                <p className="mono-label mb-4">Currently</p>
+                <h2 className="text-2xl font-semibold">{data.title}</h2>
+                <p className="mt-4 leading-7 text-muted-foreground">{data.availability}</p>
+              </div>
+              <div className="mt-8 grid grid-cols-2 gap-3">
+                {data.stats.slice(0, 4).map((stat) => (
+                  <div key={stat.label} className="border border-white/10 bg-white/[0.03] p-4">
+                    <p className="text-2xl font-semibold text-foreground">{stat.value}</p>
+                    <p className="mt-1 text-xs text-muted-foreground">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </section>
+  );
+}

@@ -1,72 +1,70 @@
+import { motion } from "framer-motion";
+import { MapPin, Radio, ShieldCheck } from "lucide-react";
+import SectionIntro from "@/components/SectionIntro";
+import type { PortfolioData } from "@/types/portfolio";
+import profileImage from "@/assets/sahanchamara.jpg";
 
-import { Card, CardContent } from '@/components/ui/card';
+type AboutProps = {
+  data: PortfolioData;
+};
 
-const About = () => {
+export default function About({ data }: AboutProps) {
   return (
-    <section id="about" className="section-container relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl dark:bg-primary/10"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-accent/5 rounded-full blur-3xl dark:bg-accent/10"></div>
-      </div>
-      
-      <div className="mb-12 text-center relative">
-        <span className="inline-block px-3 py-1 text-sm font-medium bg-muted rounded-full mb-4">About Me</span>
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">My Background</h2>
-        <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
-      </div>
-      
-      <div className="grid md:grid-cols-2 gap-10 items-center">
-        <div className="space-y-6">
-          <p className="text-lg leading-relaxed">
-          Hello!. I'm Sahan Chamara. a results-driven Full Stack Developer passionate about building innovative digital solutions that solve real-world challenges. With expertise spanning Java, Spring Boot, React, Angular, JavaScript, Python, and both SQL and NoSQL databases, I create responsive, scalable applications focused on exceptional user experiences.
-          </p>
-          <p className="leading-relaxed">
-          My development approach combines clean code principles with agile methodologies to deliver high-performance software throughout the entire development lifecycle. Currently expanding my skills as a Trainee Developer, I'm committed to implementing industry best practices in software architecture, web accessibility, and responsive design
-          </p>
-          <p className="leading-relaxed">
-          I leverage modern frameworks and development tools to build optimized, SEO-friendly applications while continuously exploring emerging technologies to enhance my technical repertoire. Let's connect to discuss how my full-stack expertise can transform your next digital project into a seamless, efficient, and market-ready solution.
-          </p>
-          
-          {/* Key traits */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
-            {["Problem Solver", "Fast Learner", "Team Player", "Detail-Oriented"].map((trait, i) => (
-              <div key={i} className="bg-muted/50 dark:bg-muted/20 backdrop-blur-sm rounded-lg p-4 text-center hover:bg-primary/10 transition-colors">
-                <p className="font-medium">{trait}</p>
+    <section id="about" className="section-shell">
+      <SectionIntro
+        eyebrow="About"
+        title="Backend discipline, cloud deployment instincts, and product delivery focus."
+        description="The portfolio is tuned around practical engineering value: reliable APIs, real-time workflows, containerized releases, and cloud systems that are understandable under pressure."
+      />
+
+      <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr]">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          className="cinematic-card overflow-hidden rounded-lg"
+        >
+          <img src={profileImage} alt={data.name} className="h-[420px] w-full object-cover object-top" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ delay: 0.08 }}
+          className="cinematic-card rounded-lg p-6 sm:p-8"
+        >
+          <div className="grid gap-6 lg:grid-cols-[1fr_0.82fr]">
+            <div>
+              <p className="text-lg leading-8 text-muted-foreground">{data.summary}</p>
+              <div className="mt-8 grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
+                <p className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4 text-accent" />
+                  {data.location}
+                </p>
+                <p className="flex items-center gap-2">
+                  <Radio className="h-4 w-4 text-green-400" />
+                  {data.availability}
+                </p>
+                <p className="flex items-center gap-2">
+                  <ShieldCheck className="h-4 w-4 text-primary" />
+                  Clean architecture and scalable systems
+                </p>
               </div>
-            ))}
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+              {data.stats.map((stat) => (
+                <div key={stat.label} className="border border-white/10 bg-white/[0.03] p-4">
+                  <p className="text-3xl font-semibold">{stat.value}</p>
+                  <p className="mt-1 text-sm font-medium">{stat.label}</p>
+                  <p className="mt-2 text-xs leading-5 text-muted-foreground">{stat.detail}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-        
-        <Card className="overflow-hidden border-primary/10 dark:border-primary/20">
-          <CardContent className="p-0">
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/20 dark:to-accent/20 p-6">
-              <p className="font-mono text-sm mb-2 text-primary">EDUCATION</p>
-              <h3 className="text-xl font-semibold mb-1">Diploma in Software Engineering</h3>
-              <p className="text-muted-foreground mb-4">Institue Of Computer Engineering Technolofy (iCET), 2024-2025</p>
-            </div>
-            
-            <div className="p-6">
-              <p className="font-mono text-sm mb-2 text-primary">EXPERIENCE</p>
-{/*               <div className="relative border-l-2 border-primary/20 pl-6 pb-6">
-                <div className="absolute top-0 left-[-9px] w-4 h-4 rounded-full bg-primary"></div>
-                <h3 className="text-xl font-semibold mb-1">Senior Frontend Developer</h3>
-                <p className="text-muted-foreground mb-2">TechCorp Inc., 2022-Present</p>
-                <p className="text-sm">Led development of multiple web applications using React and TypeScript</p>
-              </div> */}
-              
-              <div className="relative border-l-2 border-primary/20 pl-6">
-                <div className="absolute top-0 left-[-9px] w-4 h-4 rounded-full bg-accent"></div>
-                <h3 className="text-xl font-semibold mb-1">Software Developer</h3>
-                <p className="text-muted-foreground mb-2">Innovative Solutions, 2024-2025</p>
-                <p className="text-sm">Developed and maintained full-stack applications</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        </motion.div>
       </div>
     </section>
   );
-};
-
-export default About;
+}
