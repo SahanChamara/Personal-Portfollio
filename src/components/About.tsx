@@ -1,72 +1,78 @@
+import { motion } from "framer-motion";
+import { Cloud, MapPin, Radio, ShieldCheck } from "lucide-react";
+import type { PortfolioData } from "@/types/portfolio";
 
-import { Card, CardContent } from '@/components/ui/card';
-
-const About = () => {
-  return (
-    <section id="about" className="section-container relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl dark:bg-primary/10"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-accent/5 rounded-full blur-3xl dark:bg-accent/10"></div>
-      </div>
-      
-      <div className="mb-12 text-center relative">
-        <span className="inline-block px-3 py-1 text-sm font-medium bg-muted rounded-full mb-4">About Me</span>
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">My Background</h2>
-        <div className="h-1 w-16 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
-      </div>
-      
-      <div className="grid md:grid-cols-2 gap-10 items-center">
-        <div className="space-y-6">
-          <p className="text-lg leading-relaxed">
-          Hello!. I'm Sahan Chamara. a results-driven Full Stack Developer passionate about building innovative digital solutions that solve real-world challenges. With expertise spanning Java, Spring Boot, React, Angular, JavaScript, Python, and both SQL and NoSQL databases, I create responsive, scalable applications focused on exceptional user experiences.
-          </p>
-          <p className="leading-relaxed">
-          My development approach combines clean code principles with agile methodologies to deliver high-performance software throughout the entire development lifecycle. Currently expanding my skills as a Trainee Developer, I'm committed to implementing industry best practices in software architecture, web accessibility, and responsive design
-          </p>
-          <p className="leading-relaxed">
-          I leverage modern frameworks and development tools to build optimized, SEO-friendly applications while continuously exploring emerging technologies to enhance my technical repertoire. Let's connect to discuss how my full-stack expertise can transform your next digital project into a seamless, efficient, and market-ready solution.
-          </p>
-          
-          {/* Key traits */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
-            {["Problem Solver", "Fast Learner", "Team Player", "Detail-Oriented"].map((trait, i) => (
-              <div key={i} className="bg-muted/50 dark:bg-muted/20 backdrop-blur-sm rounded-lg p-4 text-center hover:bg-primary/10 transition-colors">
-                <p className="font-medium">{trait}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        <Card className="overflow-hidden border-primary/10 dark:border-primary/20">
-          <CardContent className="p-0">
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/20 dark:to-accent/20 p-6">
-              <p className="font-mono text-sm mb-2 text-primary">EDUCATION</p>
-              <h3 className="text-xl font-semibold mb-1">Diploma in Software Engineering</h3>
-              <p className="text-muted-foreground mb-4">Institue Of Computer Engineering Technolofy (iCET), 2024-2025</p>
-            </div>
-            
-            <div className="p-6">
-              <p className="font-mono text-sm mb-2 text-primary">EXPERIENCE</p>
-{/*               <div className="relative border-l-2 border-primary/20 pl-6 pb-6">
-                <div className="absolute top-0 left-[-9px] w-4 h-4 rounded-full bg-primary"></div>
-                <h3 className="text-xl font-semibold mb-1">Senior Frontend Developer</h3>
-                <p className="text-muted-foreground mb-2">TechCorp Inc., 2022-Present</p>
-                <p className="text-sm">Led development of multiple web applications using React and TypeScript</p>
-              </div> */}
-              
-              <div className="relative border-l-2 border-primary/20 pl-6">
-                <div className="absolute top-0 left-[-9px] w-4 h-4 rounded-full bg-accent"></div>
-                <h3 className="text-xl font-semibold mb-1">Software Developer</h3>
-                <p className="text-muted-foreground mb-2">Innovative Solutions, 2024-2025</p>
-                <p className="text-sm">Developed and maintained full-stack applications</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    </section>
-  );
+type AboutProps = {
+  data: PortfolioData;
 };
 
-export default About;
+export default function About({ data }: AboutProps) {
+  const featuredStats = data.stats.slice(0, 4);
+
+  return (
+    <section id="about" className="section-shell">
+      <motion.div
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.18 }}
+        transition={{ duration: 0.65, ease: "easeOut" }}
+        className="relative overflow-hidden rounded-[1.5rem] border border-border/80 bg-card/80 p-6 shadow-2xl shadow-foreground/10 backdrop-blur-xl sm:p-8 lg:p-10 dark:border-white/10 dark:bg-card/55 dark:shadow-black/30"
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(var(--primary-rgb),0.22),transparent_28%),radial-gradient(circle_at_88%_74%,rgba(var(--accent-rgb),0.14),transparent_32%)]" />
+        <div className="absolute inset-0 opacity-50 noise-overlay" />
+
+        <div className="relative z-10 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+          <div className="space-y-7">
+            <div className="space-y-4">
+              <p className="mono-label">About</p>
+              <h2 className="max-w-3xl text-3xl font-semibold leading-tight sm:text-5xl">
+                Engineering clean backend systems for real products and cloud deployments.
+              </h2>
+              <p className="max-w-3xl text-base leading-8 text-muted-foreground">{data.summary}</p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-3">
+              <div className="border border-border/70 bg-background/60 p-4 backdrop-blur-md dark:border-white/10 dark:bg-background/45">
+                <MapPin className="mb-4 h-4 w-4 text-accent" />
+                <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Location</p>
+                <p className="mt-2 text-sm font-medium leading-6">{data.location}</p>
+              </div>
+              <div className="border border-border/70 bg-background/60 p-4 backdrop-blur-md dark:border-white/10 dark:bg-background/45">
+                <Cloud className="mb-4 h-4 w-4 text-primary" />
+                <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Focus</p>
+                <p className="mt-2 text-sm font-medium leading-6">AWS, Docker, CI/CD, scalable APIs</p>
+              </div>
+              <div className="border border-border/70 bg-background/60 p-4 backdrop-blur-md dark:border-white/10 dark:bg-background/45">
+                <Radio className="mb-4 h-4 w-4 text-green-400" />
+                <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Status</p>
+                <p className="mt-2 text-sm font-medium leading-6">{data.availability}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="cinematic-card rounded-[1.25rem] p-5">
+            <div className="mb-6 flex items-center gap-3 border-b border-border/70 pb-5 dark:border-white/10">
+              <span className="grid h-10 w-10 place-items-center border border-primary/25 bg-primary/10 text-primary">
+                <ShieldCheck className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="text-sm font-semibold">What I bring</p>
+                <p className="text-xs text-muted-foreground">Practical delivery, clean architecture, and cloud reliability.</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              {featuredStats.map((stat) => (
+                <div key={stat.label} className="border border-border/70 bg-background/55 p-4 dark:border-white/10 dark:bg-white/[0.03]">
+                  <p className="text-3xl font-semibold">{stat.value}</p>
+                  <p className="mt-1 text-sm font-medium">{stat.label}</p>
+                  <p className="mt-2 text-xs leading-5 text-muted-foreground">{stat.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </section>
+  );
+}
