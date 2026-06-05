@@ -58,6 +58,7 @@ function normalizeCertification(certification: Partial<Certification> & Record<s
     issuer: String(certification.issuer || "Issuer"),
     issued: String(certification.issued || "Completed"),
     group: String(certification.group || certification.issuer || "Other"),
+    credentialUrl: certification.credentialUrl ? String(certification.credentialUrl) : undefined,
   };
 }
 

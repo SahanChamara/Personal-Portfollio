@@ -53,6 +53,7 @@ export type Certification = {
   issuer: string;
   issued: string;
   group: string;
+  credentialUrl?: string;
 };
 
 export type Education = {

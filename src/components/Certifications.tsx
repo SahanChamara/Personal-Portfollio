@@ -1,4 +1,4 @@
-import { Award } from "lucide-react";
+import { Award, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import SectionIntro from "@/components/SectionIntro";
 import type { PortfolioData } from "@/types/portfolio";
@@ -42,14 +42,27 @@ export default function Certifications({ data }: CertificationsProps) {
               {data.certifications
                 .filter((certification) => certification.group === group)
                 .map((certification) => (
-                  <div key={certification.id} className="flex flex-col gap-2 border border-white/10 bg-white/[0.03] p-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div key={certification.id} className="flex flex-col gap-3 border border-white/10 bg-white/[0.03] p-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <p className="text-sm font-medium">{certification.name}</p>
                       <p className="mt-1 text-xs text-muted-foreground">{certification.issuer}</p>
                     </div>
-                    <Badge variant="outline" className="w-fit border-accent/25 text-accent">
-                      {certification.issued}
-                    </Badge>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <Badge variant="outline" className="w-fit border-accent/25 text-accent">
+                        {certification.issued}
+                      </Badge>
+                      {certification.credentialUrl ? (
+                        <a
+                          href={certification.credentialUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1 border border-primary/25 bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary/15"
+                        >
+                          Verify
+                          <ExternalLink className="h-3 w-3" />
+                        </a>
+                      ) : null}
+                    </div>
                   </div>
                 ))}
             </div>

@@ -16,7 +16,7 @@ export default function About({ data }: AboutProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.18 }}
         transition={{ duration: 0.65, ease: "easeOut" }}
-        className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-card/55 p-6 shadow-2xl shadow-black/30 backdrop-blur-xl sm:p-8 lg:p-10"
+        className="relative overflow-hidden rounded-[1.5rem] border border-border/80 bg-card/80 p-6 shadow-2xl shadow-foreground/10 backdrop-blur-xl sm:p-8 lg:p-10 dark:border-white/10 dark:bg-card/55 dark:shadow-black/30"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(var(--primary-rgb),0.22),transparent_28%),radial-gradient(circle_at_88%_74%,rgba(var(--accent-rgb),0.14),transparent_32%)]" />
         <div className="absolute inset-0 opacity-50 noise-overlay" />
@@ -32,17 +32,17 @@ export default function About({ data }: AboutProps) {
             </div>
 
             <div className="grid gap-3 sm:grid-cols-3">
-              <div className="border border-white/10 bg-background/45 p-4 backdrop-blur-md">
+              <div className="border border-border/70 bg-background/60 p-4 backdrop-blur-md dark:border-white/10 dark:bg-background/45">
                 <MapPin className="mb-4 h-4 w-4 text-accent" />
                 <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Location</p>
                 <p className="mt-2 text-sm font-medium leading-6">{data.location}</p>
               </div>
-              <div className="border border-white/10 bg-background/45 p-4 backdrop-blur-md">
+              <div className="border border-border/70 bg-background/60 p-4 backdrop-blur-md dark:border-white/10 dark:bg-background/45">
                 <Cloud className="mb-4 h-4 w-4 text-primary" />
                 <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Focus</p>
                 <p className="mt-2 text-sm font-medium leading-6">AWS, Docker, CI/CD, scalable APIs</p>
               </div>
-              <div className="border border-white/10 bg-background/45 p-4 backdrop-blur-md">
+              <div className="border border-border/70 bg-background/60 p-4 backdrop-blur-md dark:border-white/10 dark:bg-background/45">
                 <Radio className="mb-4 h-4 w-4 text-green-400" />
                 <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Status</p>
                 <p className="mt-2 text-sm font-medium leading-6">{data.availability}</p>
@@ -51,7 +51,7 @@ export default function About({ data }: AboutProps) {
           </div>
 
           <div className="cinematic-card rounded-[1.25rem] p-5">
-            <div className="mb-6 flex items-center gap-3 border-b border-white/10 pb-5">
+            <div className="mb-6 flex items-center gap-3 border-b border-border/70 pb-5 dark:border-white/10">
               <span className="grid h-10 w-10 place-items-center border border-primary/25 bg-primary/10 text-primary">
                 <ShieldCheck className="h-5 w-5" />
               </span>
@@ -63,7 +63,7 @@ export default function About({ data }: AboutProps) {
 
             <div className="grid grid-cols-2 gap-3">
               {featuredStats.map((stat) => (
-                <div key={stat.label} className="border border-white/10 bg-white/[0.03] p-4">
+                <div key={stat.label} className="border border-border/70 bg-background/55 p-4 dark:border-white/10 dark:bg-white/[0.03]">
                   <p className="text-3xl font-semibold">{stat.value}</p>
                   <p className="mt-1 text-sm font-medium">{stat.label}</p>
                   <p className="mt-2 text-xs leading-5 text-muted-foreground">{stat.detail}</p>

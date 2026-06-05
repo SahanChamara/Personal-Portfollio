@@ -43,6 +43,7 @@ const Admin = () => {
     issuer: "",
     issued: "",
     group: "",
+    credentialUrl: "",
   });
 
   useEffect(() => {
@@ -92,9 +93,10 @@ const Admin = () => {
       issuer: certForm.issuer.trim(),
       issued: certForm.issued.trim() || "Completed",
       group: certForm.group.trim() || certForm.issuer.trim(),
+      credentialUrl: certForm.credentialUrl.trim() || undefined,
     });
 
-    setCertForm({ name: "", issuer: "", issued: "", group: "" });
+    setCertForm({ name: "", issuer: "", issued: "", group: "", credentialUrl: "" });
   };
 
   return (
@@ -190,6 +192,7 @@ const Admin = () => {
               <Input value={certForm.issuer} onChange={(event) => setCertForm((prev) => ({ ...prev, issuer: event.target.value }))} placeholder="Issuer" />
               <Input value={certForm.issued} onChange={(event) => setCertForm((prev) => ({ ...prev, issued: event.target.value }))} placeholder="Issued date" />
               <Input value={certForm.group} onChange={(event) => setCertForm((prev) => ({ ...prev, group: event.target.value }))} placeholder="Group, e.g. AWS / Amazon" />
+              <Input value={certForm.credentialUrl} onChange={(event) => setCertForm((prev) => ({ ...prev, credentialUrl: event.target.value }))} placeholder="Verification URL" />
               <Button type="submit" className="w-full">Add Certification</Button>
             </form>
           </CardContent>
@@ -229,6 +232,7 @@ const Admin = () => {
                   <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
                     <span>{certification.issuer}</span>
                     <Badge variant="secondary">{certification.issued}</Badge>
+                    {certification.credentialUrl ? <Badge variant="outline">Verify link</Badge> : null}
                   </div>
                 </div>
                 <Button type="button" variant="ghost" size="icon" onClick={() => removeCertification(certification.id)} aria-label={`Remove ${certification.name}`}>

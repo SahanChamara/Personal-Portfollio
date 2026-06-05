@@ -39,7 +39,7 @@ export default function Hero({ data }: HeroProps) {
               <ArrowDownRight className="h-4 w-4" />
             </a>
           </Button>
-          <Button asChild size="lg" variant="outline" className="rounded-full border-white/15 px-6">
+          <Button asChild size="lg" variant="outline" className="rounded-full border-border/80 bg-background/40 px-6">
             <a href={data.cvUrl} target="_blank" rel="noreferrer" download>
               <Download className="h-4 w-4" />
               Resume
@@ -59,7 +59,7 @@ export default function Hero({ data }: HeroProps) {
         <div className="cinematic-card glow-border relative overflow-hidden rounded-[1.5rem]">
           <div className="relative aspect-[4/5] bg-secondary">
             <img src={profileImage} alt={data.name} className="h-full w-full object-cover object-top" />
-            <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-background via-background/70 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background via-background/80 to-transparent dark:via-background/70" />
             <div className="absolute bottom-5 left-5 right-5">
               <p className="mono-label mb-2">Currently</p>
               <p className="text-lg font-semibold">{data.title}</p>

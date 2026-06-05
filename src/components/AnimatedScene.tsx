@@ -9,12 +9,12 @@ export default function AnimatedScene() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_8%,rgba(var(--primary-rgb),0.22),transparent_34%),radial-gradient(circle_at_82%_38%,rgba(var(--accent-rgb),0.14),transparent_30%),linear-gradient(to_bottom,transparent,hsl(var(--background))_82%)]" />
 
       <motion.div
-        className="absolute left-[5%] top-[18%] hidden w-80 rounded-lg border border-white/10 bg-black/20 p-4 font-mono text-xs text-muted-foreground backdrop-blur-md lg:block"
+        className="absolute left-[5%] top-[18%] hidden w-80 rounded-lg border border-border/70 bg-card/60 p-4 font-mono text-xs text-muted-foreground backdrop-blur-md dark:border-white/10 dark:bg-black/20 lg:block"
         animate={{ y: [0, -12, 0], opacity: [0.65, 0.95, 0.65] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
       >
         {snippets.map((snippet) => (
-          <div key={snippet} className="flex items-center gap-3 border-b border-white/5 py-2 last:border-0">
+          <div key={snippet} className="flex items-center gap-3 border-b border-border/60 py-2 last:border-0 dark:border-white/5">
             <span className="h-1.5 w-1.5 bg-accent" />
             <span>{snippet}</span>
           </div>
