@@ -8,19 +8,33 @@ type ExperienceProps = {
   data: PortfolioData;
 };
 
+const roleDisplayOrder = [
+  "Associate Software Engineer",
+  "Cloud and DevOps Engineer",
+  "Software Engineer Intern",
+  "Software Engineer Trainee",
+];
+
 export default function Experience({ data }: ExperienceProps) {
+  const experiences = [...data.experiences].sort((first, second) => {
+    const firstIndex = roleDisplayOrder.indexOf(first.role);
+    const secondIndex = roleDisplayOrder.indexOf(second.role);
+
+    return (firstIndex === -1 ? roleDisplayOrder.length : firstIndex) - (secondIndex === -1 ? roleDisplayOrder.length : secondIndex);
+  });
+
   return (
     <section id="experience" className="section-shell">
       <SectionIntro
         eyebrow="Experience"
-        title="A timeline from training builds to production cloud systems."
-        description="Newest roles are shown first, with emphasis on deployment ownership, backend architecture, and real-time systems."
+        title="A timeline from production software engineering to cloud systems."
+        description="Primary engineering experience is shown first, followed by cloud and DevOps work, internships, and training foundations."
       />
 
       <div className="relative">
         <div className="absolute left-4 top-0 hidden h-full w-px bg-gradient-to-b from-primary via-accent to-transparent md:block" />
         <div className="space-y-6">
-          {data.experiences.map((experience, index) => (
+          {experiences.map((experience, index) => (
             <motion.article
               key={`${experience.role}-${experience.company}`}
               initial={{ opacity: 0, x: -20 }}
