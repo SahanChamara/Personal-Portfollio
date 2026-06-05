@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowDownRight, Download, Github, Linkedin, Mail, MapPin, Medal } from "lucide-react";
+import { ArrowDownRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import type { PortfolioData } from "@/types/portfolio";
 import profileImage from "@/assets/sahanchamara.jpg";
 
@@ -11,89 +10,59 @@ type HeroProps = {
 
 export default function Hero({ data }: HeroProps) {
   return (
-    <section id="top" className="relative mx-auto grid min-h-[calc(100vh-4rem)] max-w-7xl items-center gap-10 px-4 pb-12 pt-16 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
+    <section
+      id="top"
+      className="relative mx-auto grid min-h-[calc(100vh-4rem)] max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8"
+    >
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="space-y-7"
+        className="relative z-10 max-w-4xl space-y-7"
       >
-        <Badge className="border-primary/30 bg-primary/10 px-3 py-1 text-primary hover:bg-primary/15">
-          <Medal className="mr-2 h-3.5 w-3.5" />
-          GitHub Rank {data.github.rank} | {data.github.contributions} Contributions
-        </Badge>
+        <p className="mono-label">Sahan Chamara | Cloud-native engineering</p>
 
         <div className="space-y-5">
-          <p className="mono-label">Sahan Chamara | Cloud-native engineering</p>
-          <h1 className="max-w-4xl text-4xl font-semibold leading-[1.02] sm:text-6xl lg:text-7xl">
+          <h1 className="text-5xl font-semibold leading-[0.98] sm:text-7xl lg:text-8xl">
             {data.name}
             <span className="block gradient-text">{data.tagline}</span>
           </h1>
-          <p className="max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">{data.summary}</p>
+          <p className="max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
+            {data.title}. I build scalable backend systems, real-time products, and cloud deployment workflows.
+          </p>
         </div>
 
         <div className="flex flex-wrap gap-3">
           <Button asChild size="lg" className="rounded-full px-6">
             <a href="#projects">
-              View My Work
+              View Work
               <ArrowDownRight className="h-4 w-4" />
             </a>
           </Button>
           <Button asChild size="lg" variant="outline" className="rounded-full border-white/15 px-6">
             <a href={data.cvUrl} target="_blank" rel="noreferrer" download>
               <Download className="h-4 w-4" />
-              Download Resume
+              Resume
             </a>
           </Button>
-          <Button asChild size="lg" variant="ghost" className="rounded-full px-6">
-            <a href="#contact">
-              <Mail className="h-4 w-4" />
-              Contact Me
-            </a>
-          </Button>
-        </div>
-
-        <div className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-3">
-          <span className="flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-accent" />
-            Galle, Sri Lanka
-          </span>
-          <a className="flex items-center gap-2 hover:text-foreground" href={`https://github.com/${data.github.username}`} target="_blank" rel="noreferrer">
-            <Github className="h-4 w-4 text-accent" />
-            GitHub
-          </a>
-          <a className="flex items-center gap-2 hover:text-foreground" href="https://www.linkedin.com/in/sahanchamara" target="_blank" rel="noreferrer">
-            <Linkedin className="h-4 w-4 text-accent" />
-            LinkedIn
-          </a>
         </div>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-        className="relative"
+        transition={{ duration: 0.7, delay: 0.12, ease: "easeOut" }}
+        className="relative mx-auto w-full max-w-[440px] lg:mx-0"
       >
-        <div className="cinematic-card glow-border overflow-hidden rounded-lg">
-          <div className="grid gap-0 sm:grid-cols-[0.92fr_1.08fr] lg:grid-cols-1 xl:grid-cols-[0.92fr_1.08fr]">
-            <div className="min-h-[340px] bg-secondary">
-              <img src={profileImage} alt={data.name} className="h-full min-h-[340px] w-full object-cover object-top" />
-            </div>
-            <div className="flex flex-col justify-between p-6">
-              <div>
-                <p className="mono-label mb-4">Currently</p>
-                <h2 className="text-2xl font-semibold">{data.title}</h2>
-                <p className="mt-4 leading-7 text-muted-foreground">{data.availability}</p>
-              </div>
-              <div className="mt-8 grid grid-cols-2 gap-3">
-                {data.stats.slice(0, 4).map((stat) => (
-                  <div key={stat.label} className="border border-white/10 bg-white/[0.03] p-4">
-                    <p className="text-2xl font-semibold text-foreground">{stat.value}</p>
-                    <p className="mt-1 text-xs text-muted-foreground">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
+        <div className="absolute -inset-4 rounded-[2rem] border border-primary/20 bg-primary/5 blur-sm" />
+        <div className="absolute -right-4 bottom-10 h-44 w-44 rounded-full bg-accent/15 blur-3xl" />
+        <div className="cinematic-card glow-border relative overflow-hidden rounded-[1.5rem]">
+          <div className="relative aspect-[4/5] bg-secondary">
+            <img src={profileImage} alt={data.name} className="h-full w-full object-cover object-top" />
+            <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-background via-background/70 to-transparent" />
+            <div className="absolute bottom-5 left-5 right-5">
+              <p className="mono-label mb-2">Currently</p>
+              <p className="text-lg font-semibold">{data.title}</p>
             </div>
           </div>
         </div>
