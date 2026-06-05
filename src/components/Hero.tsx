@@ -20,7 +20,7 @@ export default function Hero({ data }: HeroProps) {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="relative z-10 max-w-4xl space-y-7"
       >
-        <p className="mono-label">Sahan Chamara | Cloud-native engineering</p>
+        <p className="mono-label">Sahan Ekanayake | Cloud-native engineering</p>
 
         <div className="space-y-5">
           <h1 className="text-5xl font-semibold leading-[0.98] sm:text-7xl lg:text-8xl">

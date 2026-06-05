@@ -11,7 +11,7 @@ export const defaultPortfolioData: PortfolioData = {
   availability: "Open to software engineering, cloud, and DevOps opportunities",
   summary:
     "Results-driven Software Engineer with hands-on experience in backend development, cloud infrastructure, and DevOps practices. Skilled in AWS, Docker, CI/CD pipelines, and Linux-based environments, deploying containerized applications and automating development workflows. Passionate about clean code, scalable systems, and transforming complex business requirements into efficient digital solutions.",
-  cvUrl: "https://drive.google.com/uc?export=download&id=1Io0lELlrLOx_Xm5ihrL1r-odAtsg3Qul",
+  cvUrl: "https://drive.google.com/uc?export=download&id=1foUh6a10MJ7UNAMUIdRCQRlRxI5JFqiA",
   socialLinks: [
     { label: "GitHub", url: "https://github.com/SahanChamara", kind: "github" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/sahanchamara", kind: "linkedin" },

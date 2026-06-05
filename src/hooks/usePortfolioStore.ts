@@ -4,6 +4,7 @@ import type { Certification, LearningItem, PortfolioData, Project, ProjectCatego
 
 const STORAGE_KEY = "portfolio-data-v3";
 const LEGACY_STORAGE_KEY = "portfolio-data-v2";
+const LEGACY_CV_FILE_IDS = ["1Io0lELlrLOx_Xm5ihrL1r-odAtsg3Qul"];
 
 function normalizeCvUrl(cvUrl: string): string {
   const trimmed = cvUrl.trim();
@@ -69,7 +70,8 @@ function normalizeData(parsed: Partial<PortfolioData> & Record<string, unknown>)
     parsedCvUrl.endsWith("resume.txt") ||
     parsedCvUrl.endsWith("resume.pdf") ||
     parsedCvUrl.includes("/resume.txt") ||
-    parsedCvUrl.includes("/resume.pdf");
+    parsedCvUrl.includes("/resume.pdf") ||
+    LEGACY_CV_FILE_IDS.some((fileId) => parsedCvUrl.includes(fileId));
 
   return {
     ...defaultPortfolioData,
