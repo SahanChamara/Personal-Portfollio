@@ -81,7 +81,22 @@ export const defaultPortfolioData: PortfolioData = {
       ),
     },
   ],
-  experiences: [
+  experiences: [    
+    {
+      role: "Associate Software Engineer",
+      company: "Residue Solutions Pvt Ltd",
+      location: "Colombo, Western Province, Sri Lanka",
+      period: "Aug 2025 - Present",
+      status: "current",
+      focusAreas: ["Backend services", "Cloud deployment", "Real-time systems", "CI/CD"],
+      highlights: [
+        "Designed and maintained scalable backend services using NestJS and MongoDB with clean architecture.",
+        "Deployed containerized applications on AWS ECS with Docker, ECR, VPC, load balancers, and auto scaling.",
+        "Configured HTTPS, domain routing, reverse proxy, Route 53, ACM, and Nginx for production systems.",
+        "Implemented real-time features with Socket.IO and monitored services with AWS CloudWatch.",
+      ],
+      techTags: ["NestJS", "MongoDB", "AWS ECS", "Docker","Linux", "Socket.IO", "CloudWatch"],
+    },
     {
       role: "Cloud and DevOps Engineer",
       company: "StackermeAI",
@@ -100,21 +115,6 @@ export const defaultPortfolioData: PortfolioData = {
         "Support repeatable server operations, deployment automation, and runtime reliability.",
       ],
       techTags: ["AWS", "Docker", "CI/CD", "Linux", "Cloud Infrastructure"],
-    },
-    {
-      role: "Associate Software Engineer",
-      company: "Residue Solutions Pvt Ltd",
-      location: "Colombo, Western Province, Sri Lanka",
-      period: "Aug 2025 - Present",
-      status: "current",
-      focusAreas: ["Backend services", "Cloud deployment", "Real-time systems", "CI/CD"],
-      highlights: [
-        "Designed and maintained scalable backend services using NestJS and MongoDB with clean architecture.",
-        "Deployed containerized applications on AWS ECS with Docker, ECR, VPC, load balancers, and auto scaling.",
-        "Configured HTTPS, domain routing, reverse proxy, Route 53, ACM, and Nginx for production systems.",
-        "Implemented real-time features with Socket.IO and monitored services with AWS CloudWatch.",
-      ],
-      techTags: ["NestJS", "MongoDB", "AWS ECS", "Docker", "Socket.IO", "CloudWatch"],
     },
     {
       role: "Software Engineer Intern",
